@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista libri</title>
+</head>
+<body>
+    <h1>Lista dei libri</h1>
+    <ul>
+        {% for libro in libri %}
+            <li>
+                <a href="{% url 'dettaglio_libro' libro.id %}">
+                    {{ Libro.titolo }} - {{ Libro.autore }} ({{ Libro.anno_pubblicazione }})
+                </a>
+            </li>
+        {% empty %}
+            <li>Nessun libro trovato.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
